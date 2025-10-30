@@ -1,0 +1,292 @@
+/* src/styles/Gallery.css - Gallery and My Uploads Page Styles */
+
+.gallery-container {
+  padding: 40px 20px;
+  max-width: 1400px;
+  margin: 0 auto;
+  animation: fadeIn 0.5s ease;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* Page heading */
+.gallery-container h2 {
+  text-align: center;
+  color: white;
+  font-size: 36px;
+  margin-bottom: 40px;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+/* No photos message */
+.no-photos {
+  text-align: center;
+  color: white;
+  font-size: 20px;
+  padding: 100px 20px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 15px;
+  backdrop-filter: blur(10px);
+}
+
+/* Photos grid layout */
+.photos-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+  gap: 30px;
+}
+
+/* Individual photo card */
+.photo-card {
+  background: white;
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+  transition: all 0.3s ease;
+  animation: scaleIn 0.5s ease;
+}
+
+@keyframes scaleIn {
+  from {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.photo-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+}
+
+/* Photo image */
+.photo-card img {
+  width: 100%;
+  height: 300px;
+  object-fit: cover;
+  transition: all 0.3s ease;
+}
+
+.photo-card:hover img {
+  transform: scale(1.05);
+}
+
+/* Photo information section */
+.photo-info {
+  padding: 20px;
+}
+
+.photo-info h3 {
+  color: #667eea;
+  margin-bottom: 10px;
+  font-size: 22px;
+}
+
+.photo-info p {
+  color: #666;
+  margin-bottom: 15px;
+  line-height: 1.6;
+}
+
+/* Photo author */
+.photo-author {
+  display: block;
+  color: #999;
+  font-style: italic;
+  margin-bottom: 15px;
+  font-size: 14px;
+}
+
+/* Photo stats (likes and comments count) */
+.photo-stats {
+  display: flex;
+  gap: 20px;
+  margin-bottom: 10px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+.photo-stats span {
+  color: #666;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.photo-info small {
+  display: block;
+  color: #999;
+  font-size: 12px;
+  margin-top: 10px;
+}
+
+/* Photo actions section */
+.photo-actions {
+  margin-top: 15px;
+  padding-top: 15px;
+  border-top: 1px solid #e0e0e0;
+}
+
+/* Like button */
+.like-btn {
+  background: #f0f0f0;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 20px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: all 0.3s ease;
+  font-weight: 500;
+}
+
+.like-btn:hover {
+  background: #e0e0e0;
+  transform: scale(1.05);
+}
+
+.like-btn.liked {
+  background: #ffe0e0;
+  color: #ff4757;
+}
+
+/* Comments section */
+.comments-section {
+  margin-top: 20px;
+  padding-top: 20px;
+  border-top: 1px solid #e0e0e0;
+}
+
+.comments-section h4 {
+  color: #667eea;
+  margin-bottom: 15px;
+  font-size: 16px;
+}
+
+/* Comments list */
+.comments-list {
+  max-height: 200px;
+  overflow-y: auto;
+  margin-bottom: 15px;
+}
+
+/* Scrollbar styling */
+.comments-list::-webkit-scrollbar {
+  width: 6px;
+}
+
+.comments-list::-webkit-scrollbar-track {background: #f1f1f1;
+  border-radius: 10px;
+}
+
+.comments-list::-webkit-scrollbar-thumb {
+  background: #667eea;
+  border-radius: 10px;
+}
+
+.comments-list::-webkit-scrollbar-thumb:hover {
+  background: #5568d3;
+}
+
+/* Individual comment */
+.comment {
+  background: #f8f9fa;
+  padding: 10px;
+  border-radius: 8px;
+  margin-bottom: 10px;
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+.comment strong {
+  color: #667eea;
+  margin-right: 5px;
+  font-weight: 600;
+}
+
+/* Add comment input section */
+.add-comment {
+  display: flex;
+  gap: 10px;
+}
+
+.add-comment input {
+  flex: 1;
+  padding: 10px;
+  border: 2px solid #e0e0e0;
+  border-radius: 8px;
+  font-size: 14px;
+  transition: all 0.3s ease;
+}
+
+.add-comment input:focus {
+  outline: none;
+  border-color: #667eea;
+  box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+}
+
+.add-comment button {
+  padding: 10px 20px;
+  background: #667eea;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 14px;
+  transition: all 0.3s ease;
+  font-weight: 500;
+}
+
+.add-comment button:hover {
+  background: #5568d3;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(102, 126, 234, 0.3);
+}
+
+.add-comment button:active {
+  transform: translateY(0);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .gallery-container h2 {
+    font-size: 28px;
+  }
+
+  .photos-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .photo-card img {
+    height: 250px;
+  }
+
+  .photo-info {
+    padding: 15px;
+  }
+
+  .photo-info h3 {
+    font-size: 20px;
+  }
+
+  .photo-stats {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .add-comment {
+    flex-direction: column;
+  }
+
+  .add-comment button {
+    width: 100%;
+  }
+}
